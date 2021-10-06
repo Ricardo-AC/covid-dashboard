@@ -1,0 +1,21 @@
+<table class="container m-5 table table-bordered table-dark">
+  <thead>
+  <tr>
+    <th scope="col">Country</th>
+    <th scope="col">Cases</th>
+    <th scope="col">Deaths</th>
+    <th scope="col">Recovered</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let country of countries" class="grow py-auto">
+    <td routerLink="country/{{country.id}}">
+      <img src="{{country.flag_url}}" style="height: 30px;width: 45px" class="me-5">
+      {{country.name}}
+    </td>
+    <td class="py-auto">{{country.data[0].cases}}</td>
+    <td class="py-auto">{{country.data[0].deaths}}</td>
+    <td class="py-auto">{{country.data[0].recovered}}</td>
+  </tr>
+  </tbody>
+</table>
